@@ -37,9 +37,6 @@ def draw_smile(x, y):
     t.goto(x+10, y+20)
     t.goto(x+25, y+40)
     t.width(1)
-for n in range(50):
-    x = random.randrange(-turtle.window_width()//2, turtle.window_width()//2)
-    y = random.randrange(-turtle.window_height()//2, turtle.window_height()//2)
-    draw_smile(x, y)
-    
+turtle.onscreenclick(draw_smile)
+input()
 
