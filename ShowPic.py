@@ -8,6 +8,7 @@ pic.set_colorkey(colorkey)
 picx = 0
 picy = 0
 BLACK = (0, 0, 0)
+timer = pygame.time.Clock()
 
 while keep_going:
     for event in pygame.event.get():
@@ -17,6 +18,7 @@ while keep_going:
     screen.fill(BLACK)
     screen.blit(pic, (picx,picy))
     pygame.display.update()
+    timer.tick(60) #ограничить фпс 60
    
 pygame.quit() #Quit
   
