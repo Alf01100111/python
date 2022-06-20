@@ -9,16 +9,21 @@ picx = 0
 picy = 0
 BLACK = (0, 0, 0)
 timer = pygame.time.Clock()
+speed = 5
 
 while keep_going:
     for event in pygame.event.get():
         keep_going = False
-    picx += 1 #Передвинуть картинку
-    picy += 1
+    picx += speed                        #Передвинуть картинку
+    picy += speed
+    
+    if picx <= 0 or picx + pic.get_width() >= 600:  #проверка на коллизию с левой и правой стеной
+        speed = -speed
+        
     screen.fill(BLACK)
     screen.blit(pic, (picx,picy))
     pygame.display.update()
-    timer.tick(60) #ограничить фпс 60
+    timer.tick(60)                       #ограничить фпс 60
    
 pygame.quit() #Quit
   
